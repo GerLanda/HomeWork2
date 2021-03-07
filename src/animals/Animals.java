@@ -5,7 +5,6 @@ import food.Food;
 abstract public class Animals {
     private String name;
     private String view;
-    private int satiety;
     private int age;
 
     public String getName() {
@@ -14,14 +13,6 @@ abstract public class Animals {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getSatiety() {
-        return satiety;
-    }
-
-    public void setSatiety(int satiety) {
-        this.satiety = satiety;
     }
 
     public int getAge() {
@@ -40,21 +31,17 @@ abstract public class Animals {
         this.view = view;
     }
 
-    public Animals(String name, String view, int satiety, int age) {
+    public Animals(String name, String view, int age) {
         this.name = name;
-        this.satiety = satiety;
-        this.age = age;
         this.view = view;
+        this.age = age;
     }
 
     public void display() {
-        System.out.println("Это живтное: " + getName() + ",оно " + getView() + ",возраст " + getAge() + ",уровень сытости " + getSatiety());
+        System.out.println("Это живтное: " + getName() + ",оно " + getView() + ",возраст " + getAge());
     }
 
     abstract public boolean eat(Food food);
-
-    abstract public void feed(Food food, Animals animals);
-
 }
 
 

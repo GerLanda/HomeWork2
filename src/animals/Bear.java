@@ -5,8 +5,8 @@ import food.Food;
 public class Bear extends Carnivorus implements Roaring {
     private int weight;
 
-    public Bear(String name, String view, int satiety, int age, int weight) {
-        super(name, view, satiety, age);
+    public Bear(String name, String view, int age, int weight) {
+        super(name, view, age);
         this.weight = weight;
     }
 
@@ -19,25 +19,13 @@ public class Bear extends Carnivorus implements Roaring {
     }
 
     public void roar() {
-        System.out.println("Ррррррёёёёёввввв.(Кажется к нему лучше не подходить!!!)");
+        System.out.println("Ррррррёёёёёввввв.(К мише лучше не подходить!!!)");
     }
 
     @Override
     public boolean eat(Food food) {
         return food.isMeat();
-
     }
-
-    @Override
-    public void feed(Food food, Animals animals) {
-if(animals.eat(food)==true){
-    System.out.println("Рррр, миша доволен...");
-}
-else {
-    System.out.println("Я такое не ем ,рррр , миша начинает злиться ....");
-}
-    }
-
 }
 
 interface Roaring {

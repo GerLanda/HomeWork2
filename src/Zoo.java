@@ -3,39 +3,74 @@ import food.Food;
 import food.Grass;
 import food.Meat;
 
-
 public class Zoo {
     public static void main(String[] args) {
-        Carnivorus wolf = new Wolf("Акела", "Хищник", 10, 5, "Тундровый");
-        Carnivorus bear = new Bear("Миша", "Русский", 10, 7, 70);
-        Carnivorus fish = new Fish("Морской Чёрт", "Хищник", 10, 3, 120);
+        Wolf wolf = new Wolf("Акела", "Хищник", 5, "Тундровый");
+        Bear bear = new Bear("Миша", "Русский", 7, 70);
+        Fish fish = new Fish("Морской Чёрт", "Хищник", 3, 120);
 
-        Herbivorous duck = new Duck("Дональд", "Антропоморфный", 10, 65, "Белый");
-        Herbivorous panda = new Panda("Дизайнер", "Рэпер", 10, 23);
-        Herbivorous elephant = new Elephant("Дамбо", "Слоновый", 10, 10, 6000);
+        Duck duck = new Duck("Дональд", "Антропоморфный", 65, "Белый");
+        Panda panda = new Panda("Дизайнер", "Рэпер", 23);
+        Elephant elephant = new Elephant("Дамбо", "Слоновый", 5, 6000);
+
+        Fish nemo = new Fish("Немо", "В поисках", 3, 120);
+        Duck mcDuck = new Duck("Скрудж", "Антропоморфный", 65, "Белый");
+
+        Worker worker = new Worker("Алексей", "Работник зоопарка");
 
         Food food1 = new Meat();
         Food food2 = new Grass();
 
-        // Проверка всех методов
+        Pond.Swimming[] pond = new Pond.Swimming[4];
+        pond[0] = nemo;
+        pond[1] = fish;
+        pond[2] = mcDuck;
+        pond[3] = duck;
 
-        wolf.feed(food1,wolf);
-        bear.feed(food1,bear);
-        fish.feed(food1,fish);
+        //Проверка метода пруда
+        for (Pond.Swimming p : pond) {
+            p.swim();
+        }
 
-        wolf.feed(food2,wolf);
-        bear.feed(food2,bear);
-        fish.feed(food2,fish);
+        System.out.println();
 
-        duck.feed(food2,duck);
-        panda.feed(food2,panda);
-        elephant.feed(food2,elephant);
+        //Проверка интерфейсов
+        wolf.howl();
+        bear.roar();
+        fish.swim();
 
-        duck.feed(food1,duck);
-        panda.feed(food1,panda);
-        elephant.feed(food1,elephant);
+        duck.quack();
+        panda.eatBamboo();
+        elephant.watch();
 
+        //Проверка кормления животных разной едой
+        System.out.println();
 
+        //Хищники довольны едой
+        worker.feed(food1, wolf);
+        worker.feed(food1, bear);
+        worker.feed(food1, fish);
+        //Хищники недовольны едой
+        worker.feed(food2, wolf);
+        worker.feed(food2, bear);
+        worker.feed(food2, fish);
+        //Травоядные довольны едой
+        worker.feed(food2, duck);
+        worker.feed(food2, panda);
+        worker.feed(food2, elephant);
+        //Травоядные недовольны едой
+        worker.feed(food1, duck);
+        worker.feed(food1, panda);
+        worker.feed(food1, elephant);
 
+        //Проверка метода подачи голоса
+        System.out.println();
+
+        worker.getVoice(wolf);
+        worker.getVoice(bear);
+        worker.getVoice(fish);
+        worker.getVoice(duck);
+        worker.getVoice(panda);
+        worker.getVoice(elephant);
     }
 }

@@ -2,11 +2,11 @@ package animals;
 
 import food.Food;
 
-public class Duck extends Herbivorous implements Quacking {
+public class Duck extends Herbivorous implements Quacking, Pond.Swimming {
     private String color;
 
-    public Duck(String name, String view, int satiety, int age, String color) {
-        super(name, view, satiety, age);
+    public Duck(String name, String view, int age, String color) {
+        super(name, view, age);
         this.color = color;
     }
 
@@ -27,16 +27,9 @@ public class Duck extends Herbivorous implements Quacking {
         return !food.isMeat();
     }
 
-    @Override
-    public void feed(Food food, Animals animals) {
-if(animals.eat(food)==true){
-    System.out.println("Утка, благодарно крякает...");
-}
-else {
-    System.out.println("Утка , посмотрела на еду... и на вас....?");
-}
+    public void swim() {
+        System.out.println(getName() + " плавает в пруду ...");
     }
-
 }
 
 interface Quacking {

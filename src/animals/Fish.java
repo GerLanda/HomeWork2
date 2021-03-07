@@ -2,12 +2,12 @@ package animals;
 
 import food.Food;
 
-public class Fish extends Carnivorus implements Swimmable {
+public class Fish extends Carnivorus implements Pond.Swimming {
 
     private int size;
 
-    public Fish(String name, String view, int satiety, int age, int size) {
-        super(name, view, satiety, age);
+    public Fish(String name, String view, int age, int size) {
+        super(name, view, age);
         this.size = size;
     }
 
@@ -20,26 +20,13 @@ public class Fish extends Carnivorus implements Swimmable {
     }
 
     public void swim() {
-        System.out.println("Рыбка плавает");
+        System.out.println(getName() + " плавает в пруду...");
     }
 
     @Override
     public boolean eat(Food food) {
         return food.isMeat();
     }
-
-    @Override
-    public void feed(Food food, Animals animals) {
-if(animals.eat(food)==true){
-    System.out.println("Рыба быстро подплыла и схватила еду...");
-}
-else {
-    System.out.println("Рыба не может ничего вам сказать , но если бы могла .....");
-}
-    }
-
 }
 
-interface Swimmable {
-    public void swim();
-}
+
