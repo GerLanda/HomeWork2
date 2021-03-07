@@ -1,5 +1,7 @@
 package animals;
 
+import food.Food;
+
 abstract public class Animals {
     private String name;
     private String view;
@@ -49,7 +51,12 @@ abstract public class Animals {
         System.out.println("Это живтное: " + getName() + ",оно " + getView() + ",возраст " + getAge() + ",уровень сытости " + getSatiety());
     }
 
+
+    abstract public boolean eat(Food food);
+    abstract public String name();
 }
+
+
 
 
 
