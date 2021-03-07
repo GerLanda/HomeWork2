@@ -1,10 +1,11 @@
 package food;
 
-class Meat extends Food{
-    public boolean isMeat(){
+public class Meat extends Food {
+    public boolean isMeat() {
         return true;
     }
-    public String name(){
+
+    public String name() {
         return "Мясо";
     }
 }

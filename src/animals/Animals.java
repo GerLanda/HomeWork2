@@ -51,9 +51,10 @@ abstract public class Animals {
         System.out.println("Это живтное: " + getName() + ",оно " + getView() + ",возраст " + getAge() + ",уровень сытости " + getSatiety());
     }
 
-
     abstract public boolean eat(Food food);
-    abstract public String name();
+
+    abstract public void feed(Food food, Animals animals);
+
 }
 
 
