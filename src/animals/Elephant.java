@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-public class Elephant extends Herbivorous implements Onlooking {
+public class Elephant extends Herbivorous implements Run {
 
     private int weight;
 
@@ -20,16 +20,17 @@ public class Elephant extends Herbivorous implements Onlooking {
         this.weight = weight;
     }
 
-    public void watch() {
-        System.out.println("Слон просто смотрит на вас и машет хоботом...");
+    public void run(){
+        System.out.println("Слон ходит на 4 лапах и машет ушами.");
     }
 
     @Override
-    public boolean eat(Food food) {
-        return !food.isMeat();
+    public void eat(Food food) {
+        if (food.isMeat() == false) {
+            System.out.println("Слон, любезно машет ушами ....");
+        } else {
+            System.out.println("Слон, недоумевает и топчет ногами, эта еда ему не нравится...");
+        }
     }
 }
 
-interface Onlooking {
-    public void watch();
-}

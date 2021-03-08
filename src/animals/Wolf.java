@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-public class Wolf extends Carnivorus implements Howling {
+public class Wolf extends Carnivorus implements Voice, Run {
     private String group;
 
     public Wolf(String name, String view, int age, String group) {
@@ -15,20 +15,25 @@ public class Wolf extends Carnivorus implements Howling {
         return group;
     }
 
+    public void run() {
+        System.out.println("Волк бегает на 4 лапах.");
+    }
+
     public void setGroup(String group) {
         this.group = group;
     }
 
-    public void howl() {
+    public void voice() {
         System.out.println("Вууууууууууууууууу(Волк воет.Не на луну.)");
     }
 
     @Override
-    public boolean eat(Food food) {
-        return food.isMeat();
+    public void eat(Food food) {
+        if (food.isMeat() == true) {
+            System.out.println("Вууууу, свежее мясо ...");
+        } else {
+            System.out.println("Ты бы мне ещё консервных банок притащил...");
+        }
     }
 }
 
-interface Howling {
-    public void howl();
-}

@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-public class Duck extends Herbivorous implements Quacking, Pond.Swimming {
+public class Duck extends Herbivorous implements Swimming,Voice {
     private String color;
 
     public Duck(String name, String view, int age, String color) {
@@ -18,13 +18,17 @@ public class Duck extends Herbivorous implements Quacking, Pond.Swimming {
         this.color = color;
     }
 
-    public void quack() {
-        System.out.println("Уточка, крякает.");
+    public void voice() {
+        System.out.println("Вы заставляете утку крякать...Вы крякаете, кря-кря... кря-кря... Утка не реагирует... Возможно она думает, что вы сумасшедший");
     }
 
     @Override
-    public boolean eat(Food food) {
-        return !food.isMeat();
+    public void eat(Food food) {
+        if (food.isMeat() == false) {
+            System.out.println("Утка, благодарно крякает...");
+        } else {
+            System.out.println("Утка, посмотрела на еду... и на вас..., снова на еду... , снова на вас...?");
+        }
     }
 
     public void swim() {
@@ -32,6 +36,3 @@ public class Duck extends Herbivorous implements Quacking, Pond.Swimming {
     }
 }
 
-interface Quacking {
-    public void quack();
-}

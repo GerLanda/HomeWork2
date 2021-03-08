@@ -21,27 +21,25 @@ public class Zoo {
         Food food1 = new Meat();
         Food food2 = new Grass();
 
-        Pond.Swimming[] pond = new Pond.Swimming[4];
+        Swimming[] pond = new Swimming[4];
         pond[0] = nemo;
         pond[1] = fish;
         pond[2] = mcDuck;
         pond[3] = duck;
 
         //Проверка метода пруда
-        for (Pond.Swimming p : pond) {
+        for (Swimming p : pond) {
             p.swim();
         }
 
         System.out.println();
 
         //Проверка интерфейсов
-        wolf.howl();
-        bear.roar();
-        fish.swim();
+        bear.run();
+        wolf.run();
 
-        duck.quack();
-        panda.eatBamboo();
-        elephant.watch();
+        panda.run();
+        elephant.run();
 
         //Проверка кормления животных разной едой
         System.out.println();
@@ -68,9 +66,7 @@ public class Zoo {
 
         worker.getVoice(wolf);
         worker.getVoice(bear);
-        worker.getVoice(fish);
         worker.getVoice(duck);
         worker.getVoice(panda);
-        worker.getVoice(elephant);
     }
 }

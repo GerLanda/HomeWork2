@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-public class Fish extends Carnivorus implements Pond.Swimming {
+public class Fish extends Carnivorus implements Swimming {
 
     private int size;
 
@@ -24,8 +24,12 @@ public class Fish extends Carnivorus implements Pond.Swimming {
     }
 
     @Override
-    public boolean eat(Food food) {
-        return food.isMeat();
+    public void eat(Food food) {
+        if (food.isMeat() == true) {
+            System.out.println("Рыба быстро подплыла и схватила еду...");
+        } else {
+            System.out.println("Рыба игнорирует, эту еду...");
+        }
     }
 }
 

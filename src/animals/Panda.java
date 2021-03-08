@@ -2,22 +2,27 @@ package animals;
 
 import food.Food;
 
-public class Panda extends Herbivorous implements Eating {
+public class Panda extends Herbivorous implements Voice, Run {
 
     public Panda(String name, String view, int age) {
         super(name, view, age);
     }
 
-    public void eatBamboo() {
+    public void voice() {
         System.out.println("Ёуу восап бро, у тебя нет немного бамбука для меня??");
     }
 
+    public void run() {
+        System.out.println("Панда ходит, опираясь на передние лапы.");
+    }
+
     @Override
-    public boolean eat(Food food) {
-        return !food.isMeat();
+    public void eat(Food food) {
+        if (food.isMeat() == false) {
+            System.out.println("ёу бро , забористый бамбук ты приташил ...");
+        } else {
+            System.out.println("ооу неет.., кажется это плохо пахнет.. У тебя нет немного бамбука для меня ...?");
+        }
     }
 }
 
-interface Eating {
-    public void eatBamboo();
-}
