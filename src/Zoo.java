@@ -3,7 +3,10 @@ import food.Food;
 import food.Grass;
 import food.Meat;
 
+import java.util.ArrayList;
+
 public class Zoo {
+
     public static void main(String[] args) {
         Wolf wolf = new Wolf("Акела", "Хищник", 5, "Тундровый");
         Bear bear = new Bear("Миша", "Русский", 7, 70);
@@ -41,26 +44,6 @@ public class Zoo {
         panda.run();
         elephant.run();
 
-        //Проверка кормления животных разной едой
-        System.out.println();
-
-        //Хищники довольны едой
-        worker.feed(food1, wolf);
-        worker.feed(food1, bear);
-        worker.feed(food1, fish);
-        //Хищники недовольны едой
-        worker.feed(food2, wolf);
-        worker.feed(food2, bear);
-        worker.feed(food2, fish);
-        //Травоядные довольны едой
-        worker.feed(food2, duck);
-        worker.feed(food2, panda);
-        worker.feed(food2, elephant);
-        //Травоядные недовольны едой
-        worker.feed(food1, duck);
-        worker.feed(food1, panda);
-        worker.feed(food1, elephant);
-
         //Проверка метода подачи голоса
         System.out.println();
 
@@ -68,5 +51,24 @@ public class Zoo {
         worker.getVoice(bear);
         worker.getVoice(duck);
         worker.getVoice(panda);
+
+        System.out.println();
+
+        ArrayList<Object> animals = new ArrayList<Object>();
+        animals.add(wolf);
+        animals.add(bear);
+        animals.add(fish);
+        animals.add(duck);
+        animals.add(panda);
+        animals.add(elephant);
+
+        ArrayList<Object> food = new ArrayList<Object>();
+        food.add(food1);
+        food.add(food2);
+
+        for(Object f:food){
+            for(Object a:animals)
+            worker.feed((Food) f,(Animals) a);
+        }
     }
 }

@@ -32,7 +32,7 @@ public class Worker {
     }
 
     public void getVoice(Voice animals) {
-        System.out.println("Вы заставляете подать голос: " + animals);
+        System.out.println("Вы заставляете подать голос: " + animals.getName());
         animals.voice();
     }
 }
