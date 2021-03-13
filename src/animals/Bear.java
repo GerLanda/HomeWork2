@@ -1,6 +1,9 @@
 package animals;
 
+import food.Beef;
+import food.Chicken;
 import food.Food;
+import food.FreshFish;
 
 public class Bear extends Carnivorus implements Voice,Run{
     private int weight;
@@ -28,7 +31,7 @@ public class Bear extends Carnivorus implements Voice,Run{
 
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == true) {
+        if (food.isMeat() == true&&food instanceof Beef || food instanceof Chicken || food instanceof FreshFish) {
             System.out.println("Медведь кушает..., миша доволен...");
         } else {
             System.out.println("Медведь рычит, кажется эта еда ему не нравится, миша начинает злиться ...");

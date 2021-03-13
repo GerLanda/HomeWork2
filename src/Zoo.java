@@ -1,9 +1,8 @@
 import animals.*;
-import food.Food;
-import food.Grass;
-import food.Meat;
+import food.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Zoo {
 
@@ -21,8 +20,6 @@ public class Zoo {
 
         Worker worker = new Worker("Алексей", "Работник зоопарка");
 
-        Food food1 = new Meat();
-        Food food2 = new Grass();
 
         Swimming[] pond = new Swimming[4];
         pond[0] = nemo;
@@ -62,13 +59,26 @@ public class Zoo {
         animals.add(panda);
         animals.add(elephant);
 
-        ArrayList<Object> food = new ArrayList<Object>();
-        food.add(food1);
-        food.add(food2);
+        Meat beef = new Beef();
+        Meat chicken = new Chicken();
+        Meat fresh_fish = new FreshFish();
+        Grass bamboo = new Bamboo();
+        Grass fruit = new Fruit();
+        Grass fish_feed = new FishFeed();
 
-        for(Object f:food){
-            for(Object a:animals)
-            worker.feed((Food) f,(Animals) a);
+        ArrayList<Object> food = new ArrayList<Object>();
+        food.add(beef);
+        food.add(chicken);
+        food.add(fresh_fish);
+        food.add(bamboo);
+        food.add(fruit);
+        food.add(fish_feed);
+
+
+        for (Object a : animals) {
+            for (Object f : food) {
+                worker.feed((Food) f, (Animals) a);
+            }
         }
     }
 }

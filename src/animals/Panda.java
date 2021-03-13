@@ -1,6 +1,8 @@
 package animals;
 
+import food.Bamboo;
 import food.Food;
+import food.Fruit;
 
 public class Panda extends Herbivorous implements Voice, Run {
 
@@ -18,7 +20,7 @@ public class Panda extends Herbivorous implements Voice, Run {
 
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == false) {
+        if (food.isMeat() == false&&food instanceof Bamboo || food instanceof Fruit) {
             System.out.println("ёу бро , забористый бамбук ты приташил ...");
         } else {
             System.out.println("ооу неет.., кажется это плохо пахнет.. У тебя нет немного бамбука для меня ...?");

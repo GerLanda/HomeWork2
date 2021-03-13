@@ -1,5 +1,6 @@
 package animals;
 
+import food.FishFeed;
 import food.Food;
 
 public class Duck extends Herbivorous implements Swimming,Voice {
@@ -24,7 +25,7 @@ public class Duck extends Herbivorous implements Swimming,Voice {
 
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == false) {
+        if (food.isMeat() == false&&food instanceof FishFeed) {
             System.out.println("Утка, благодарно крякает...");
         } else {
             System.out.println("Утка, посмотрела на еду... и на вас..., снова на еду... , снова на вас...?");

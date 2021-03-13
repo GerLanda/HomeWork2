@@ -1,6 +1,7 @@
 package animals;
 
 import food.Food;
+import food.FreshFish;
 
 public class Fish extends Carnivorus implements Swimming {
 
@@ -25,7 +26,7 @@ public class Fish extends Carnivorus implements Swimming {
 
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == true) {
+        if (food.isMeat() == true&&food instanceof FreshFish) {
             System.out.println("Рыба быстро подплыла и схватила еду...");
         } else {
             System.out.println("Рыба игнорирует, эту еду...");

@@ -27,7 +27,7 @@ public class Worker {
     }
 
     public void feed(Food food, Animals animals) {
-        System.out.println("Покормить: " + animals.getName() + " - " + food.name());
+        System.out.println("Покормить: " + animals.getName() + " - " + food.getName());
         animals.eat(food);
     }
 

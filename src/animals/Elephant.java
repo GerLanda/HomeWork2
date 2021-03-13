@@ -1,6 +1,7 @@
 package animals;
 
 import food.Food;
+import food.Fruit;
 
 public class Elephant extends Herbivorous implements Run {
 
@@ -26,7 +27,7 @@ public class Elephant extends Herbivorous implements Run {
 
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == false) {
+        if (food.isMeat() == false&& food instanceof Fruit) {
             System.out.println("Слон, любезно машет ушами ....");
         } else {
             System.out.println("Слон, недоумевает и топчет ногами, эта еда ему не нравится...");
