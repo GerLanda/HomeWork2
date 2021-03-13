@@ -24,9 +24,17 @@ public class Fish extends Carnivorus implements Swimming {
         System.out.println(getName() + " плавает в пруду...");
     }
 
+    public void whirl() {
+        System.out.println(getName()+" кружит на поверхности...");
+    }
+
+    public void dive() {
+        System.out.println(getName() + " слился с дном...");
+    }
+
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == true&&food instanceof FreshFish) {
+        if (food.isMeat() == true && food instanceof FreshFish) {
             System.out.println("Рыба быстро подплыла и схватила еду...");
         } else {
             System.out.println("Рыба игнорирует, эту еду...");

@@ -1,6 +1,5 @@
 import animals.*;
 import food.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +19,7 @@ public class Zoo {
 
         Worker worker = new Worker("Алексей", "Работник зоопарка");
 
+        //Интерфейсы плавающих
 
         Swimming[] pond = new Swimming[4];
         pond[0] = nemo;
@@ -27,19 +27,28 @@ public class Zoo {
         pond[2] = mcDuck;
         pond[3] = duck;
 
-        //Проверка метода пруда
-        for (Swimming p : pond) {
-            p.swim();
+        for (Swimming swimming : pond) {
+            swimming.swim();
+            swimming.whirl();
+            swimming.dive();
         }
 
         System.out.println();
 
-        //Проверка интерфейсов
-        bear.run();
-        wolf.run();
+        //Интерфейсы бегающих
 
-        panda.run();
-        elephant.run();
+        ArrayList<Run> running = new ArrayList<Run>();
+
+        running.add(bear);
+        running.add(wolf);
+        running.add(elephant);
+        running.add(panda);
+
+        for (Run run : running) {
+            run.run();
+            run.sit();
+            run.jump();
+        }
 
         //Проверка метода подачи голоса
         System.out.println();
@@ -51,7 +60,7 @@ public class Zoo {
 
         System.out.println();
 
-        ArrayList<Object> animals = new ArrayList<Object>();
+        ArrayList<Animals> animals = new ArrayList<Animals>();
         animals.add(wolf);
         animals.add(bear);
         animals.add(fish);
@@ -66,7 +75,7 @@ public class Zoo {
         Grass fruit = new Fruit();
         Grass fish_feed = new FishFeed();
 
-        ArrayList<Object> food = new ArrayList<Object>();
+        ArrayList<Food> food = new ArrayList<Food>();
         food.add(beef);
         food.add(chicken);
         food.add(fresh_fish);
@@ -75,9 +84,9 @@ public class Zoo {
         food.add(fish_feed);
 
 
-        for (Object a : animals) {
-            for (Object f : food) {
-                worker.feed((Food) f, (Animals) a);
+        for (Animals animalsObject : animals) {
+            for (Food foodObject : food) {
+                worker.feed((Food) foodObject, (Animals) animalsObject);
             }
         }
     }

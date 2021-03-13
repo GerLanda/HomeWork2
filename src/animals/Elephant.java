@@ -22,8 +22,17 @@ public class Elephant extends Herbivorous implements Run {
     }
 
     public void run(){
-        System.out.println("Слон ходит на 4 лапах и машет ушами.");
+        System.out.println("Слон ходит на 4 конечностях и машет ушами.");
     }
+
+    public void sit(){
+        System.out.println("Телосложение и мускулатура слонов позволяют им принимать сидячее положение, однако в природе они делают это редко. ...");
+    }
+
+    public void jump(){
+        System.out.println("Взрослые слоны не умеют прыгать(... Главная причина — огромный вес: кости и связки суставов не выдержали бы перегрузок при отталкивании и приземлении");
+    }
+
 
     @Override
     public void eat(Food food) {

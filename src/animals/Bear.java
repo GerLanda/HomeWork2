@@ -29,6 +29,14 @@ public class Bear extends Carnivorus implements Voice,Run{
         System.out.println("Медведь ходит опираясь на передние лапы.");
     }
 
+    public void sit(){
+        System.out.println("Медведь сложил передние лапы  на пузе и сидит...");
+    }
+
+    public  void jump(){
+        System.out.println("Медведь запрыгнул на бревно... ");
+    }
+
     @Override
     public void eat(Food food) {
         if (food.isMeat() == true&&food instanceof Beef || food instanceof Chicken || food instanceof FreshFish) {

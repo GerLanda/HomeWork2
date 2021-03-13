@@ -3,7 +3,7 @@ package animals;
 import food.FishFeed;
 import food.Food;
 
-public class Duck extends Herbivorous implements Swimming,Voice {
+public class Duck extends Herbivorous implements Swimming, Voice {
     private String color;
 
     public Duck(String name, String view, int age, String color) {
@@ -24,8 +24,18 @@ public class Duck extends Herbivorous implements Swimming,Voice {
     }
 
     @Override
+    public void whirl() {
+        System.out.println(getName() + " наматывает круги по воде...");
+    }
+
+    @Override
+    public void dive() {
+        System.out.println(getName()+" нырнул под воду...");
+    }
+
+    @Override
     public void eat(Food food) {
-        if (food.isMeat() == false&&food instanceof FishFeed) {
+        if (food.isMeat() == false && food instanceof FishFeed) {
             System.out.println("Утка, благодарно крякает...");
         } else {
             System.out.println("Утка, посмотрела на еду... и на вас..., снова на еду... , снова на вас...?");

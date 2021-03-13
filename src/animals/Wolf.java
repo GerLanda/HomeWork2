@@ -29,9 +29,17 @@ public class Wolf extends Carnivorus implements Voice, Run {
         System.out.println("Вууууууууууууууууу(Волк воет.Не на луну.)");
     }
 
+    public void sit() {
+        System.out.println("Волк сидит...");
+    }
+
+    public void jump() {
+        System.out.println("Волк высоко прыгает кста...(до 5м)");
+    }
+
     @Override
     public void eat(Food food) {
-        if (food.isMeat() == true&&food instanceof Beef || food instanceof Chicken) {
+        if (food.isMeat() == true && food instanceof Beef || food instanceof Chicken) {
             System.out.println("Вууууу, свежее мясо ...");
         } else {
             System.out.println("Ты бы мне ещё консервных банок притащил...");

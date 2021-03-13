@@ -18,6 +18,14 @@ public class Panda extends Herbivorous implements Voice, Run {
         System.out.println("Панда ходит, опираясь на передние лапы.");
     }
 
+    public void sit(){
+        System.out.println("Панда сидит на дереве...");
+    }
+
+    public void jump(){
+        System.out.println("Панда запрыгнула на дерево...");
+    }
+
     @Override
     public void eat(Food food) {
         if (food.isMeat() == false&&food instanceof Bamboo || food instanceof Fruit) {

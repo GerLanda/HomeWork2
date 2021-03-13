@@ -1,5 +1,9 @@
 package animals;
 
 public interface Swimming {
-    public void swim();
+     void swim();
+     void whirl();
+     void dive();
+
+
 }
