@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-abstract public class Animals{
+abstract public class Animal{
     private String name;
     private String view;
     private int age;
@@ -31,7 +31,7 @@ abstract public class Animals{
         this.view = view;
     }
 
-    public Animals(String name, String view, int age) {
+    public Animal(String name, String view, int age) {
         this.name = name;
         this.view = view;
         this.age = age;

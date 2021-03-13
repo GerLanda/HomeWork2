@@ -1,7 +1,7 @@
 import animals.*;
 import food.*;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 public class Zoo {
 
@@ -59,8 +59,9 @@ public class Zoo {
         worker.getVoice(panda);
 
         System.out.println();
+        //Кормление животных
 
-        ArrayList<Animals> animals = new ArrayList<Animals>();
+        ArrayList<Animal> animals = new ArrayList<Animal>();
         animals.add(wolf);
         animals.add(bear);
         animals.add(fish);
@@ -75,18 +76,17 @@ public class Zoo {
         Grass fruit = new Fruit();
         Grass fish_feed = new FishFeed();
 
-        ArrayList<Food> food = new ArrayList<Food>();
-        food.add(beef);
-        food.add(chicken);
-        food.add(fresh_fish);
-        food.add(bamboo);
-        food.add(fruit);
-        food.add(fish_feed);
+        ArrayList<Food> foods = new ArrayList<Food>();
+        foods.add(beef);
+        foods.add(chicken);
+        foods.add(fresh_fish);
+        foods.add(bamboo);
+        foods.add(fruit);
+        foods.add(fish_feed);
 
-
-        for (Animals animalsObject : animals) {
-            for (Food foodObject : food) {
-                worker.feed((Food) foodObject, (Animals) animalsObject);
+        for (Animal animal : animals) {
+            for (Food food : foods) {
+                worker.feed(food, animal);
             }
         }
     }
